@@ -31,11 +31,17 @@ plt.show()
 ### your code here!  name your classifier object clf if you want the 
 ### visualization code (prettyPicture) to show you the decision boundary
 
+# Create classifier and fit to training data
+from sklearn.neighbors import KNeighborsClassifier
+clf = KNeighborsClassifier()
+clf.fit(features_train, labels_train)
 
 
-
-
-
+# Make predictions and calculate accuracy
+pred = clf.predict(features_test)
+from sklearn.metrics import accuracy_score
+acc = accuracy_score(labels_test, pred)
+print("The accuracy is %.3f" % acc)
 
 
 try:
