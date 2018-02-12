@@ -15,8 +15,22 @@
     
 """
 
-import pickle
+import cPickle as pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
+# Number of persons:
+print "Number of persons: %i" % len(enron_data)
 
+#Number of items:
+print "Number of items: %i" % len(enron_data["GLISAN JR BEN F"])
+
+nb_poi = 0
+for i in iter(enron_data):
+	if enron_data[i]["poi"] == 1:
+		nb_poi += 1
+
+print "Number of persons of interest (''POIs''): %i" % nb_poi
+#print type(enron_data)
+#lens = [len(enron_data[i]) for i in iter(enron_data)]
+#print lens
