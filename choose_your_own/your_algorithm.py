@@ -36,7 +36,7 @@ except NameError:
 
 # Create classifier and fit to training data
 from sklearn.neighbors import KNeighborsClassifier
-import time
+from time import time
 clf = KNeighborsClassifier(n_neighbors = 10)
 t0 = time()
 clf.fit(features_train, labels_train)
