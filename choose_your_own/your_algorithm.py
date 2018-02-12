@@ -34,7 +34,7 @@ features_train, labels_train, features_test, labels_test = makeTerrainData()
 # Create classifier and fit to training data
 from sklearn.neighbors import KNeighborsClassifier
 from time import time
-clf = KNeighborsClassifier(n_neighbors = 10)
+clf = KNeighborsClassifier(n_neighbors = 8)
 t0 = time()
 clf.fit(features_train, labels_train)
 print("Training time: %.3f seconds." % round(time()-t0, 3))
