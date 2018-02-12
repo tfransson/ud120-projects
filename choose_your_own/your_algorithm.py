@@ -26,10 +26,7 @@ features_train, labels_train, features_test, labels_test = makeTerrainData()
 # plt.ylabel("grade")
 # plt.show()
 ################################################################################
-try:
-    prettyPicture(clf, features_test, labels_test)
-except NameError:
-    pass
+
 
 ### your code here!  name your classifier object clf if you want the 
 ### visualization code (prettyPicture) to show you the decision boundary
@@ -50,5 +47,8 @@ from sklearn.metrics import accuracy_score
 acc = accuracy_score(labels_test, pred)
 print("The accuracy is %.3f" % acc)
 
-
+try:
+    prettyPicture(clf, features_test, labels_test)
+except NameError:
+    pass
 
