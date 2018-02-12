@@ -34,7 +34,7 @@ features_train, labels_train, features_test, labels_test = makeTerrainData()
 # Create classifier and fit to training data
 from sklearn.ensemble import AdaBoostClassifier
 from time import time
-clf = AdaBoostClassifier(base_estimator = SVC, n_estimators = 50, learning_rate = 1.)
+clf = AdaBoostClassifier(n_estimators = 50, learning_rate = 1.)
 t0 = time()
 clf.fit(features_train, labels_train)
 print("Training time: %.3f seconds." % round(time()-t0, 3))
