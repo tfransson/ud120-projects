@@ -2,6 +2,8 @@
 
 from nltk.stem.snowball import SnowballStemmer
 import string
+# from nltk.corpus import stopwords
+
 
 def parseOutText(f):
     """ given an opened email file f, parse out all text below the
@@ -15,7 +17,8 @@ def parseOutText(f):
         text = parseOutText(f)
         
         """
-
+    ### Stopwords
+    #sw = set(stopwords.words("english"))
 
     f.seek(0)  ### go back to beginning of file (annoying)
     all_text = f.read()
@@ -30,6 +33,7 @@ def parseOutText(f):
         ### project part 2: comment out the line below
         #words = text_string
         words = text_string.split()
+        #words = [word for word in words if word not in sw]
         stemmer = SnowballStemmer("english")
         stemmed_words = [stemmer.stem(word) for word in words]
         stemmed_text = ' '.join(stemmed_words)
